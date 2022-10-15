@@ -1,0 +1,729 @@
+{
+	"info": {
+		"_postman_id": "e4b9ccf1-f844-477a-aed0-8c3aeaf69372",
+		"name": "Receta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15550887"
+	},
+	"item": [
+		{
+			"name": "Crear receta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"recetaId\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nombre\": \"Pizza\",\r\n   \"descripcion\": \"Clásica pizza italiana\",\r\n   \"imagen\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg\",\r\n   \"video\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.mp4\",\r\n   \"proceso\": \"Mezcla la harina en un recipiente grande y aparte disuelve la levadura en el agua. Haz un hueco en el centro de la harina, vierte el agua y empieza a mezclar del centro hacia afuera uniendo todos los ingredientes. Luego, agrega el aceite y pon la masa sobre un mesón enharinado; amasa durante 10 minutos o hasta que quede lisa y elástica. Déjala reposar una hora en el recipiente tapado con un limpión o todo un día en la nevera (tapado con papel film). Precalienta el horno a 450°f. / 232°C. Coloca una lata grande en la rejilla de abajo del horno o usa una piedra para pizza (si la tienes). Dale un golpe fuerte a la masa y ponla sobre el mesón enharinado. Extiende con la ayuda de un rodillo y usando las yemas de los dedos. Si se te pega a la mesa, agrega un poco más de harina. Cuando tengas un círculo de aproximadamente 35 cm, transfiere la masa a una tabla enharinada.Unta la superficie con la salsa pomodoro pero sin llegar a los bordes. Reparte el resto de los ingredientes, menos la albahaca. Pon la pizza sobre la lata o piedra que está en el horno y hornea durante 12 a 15 minutos o hasta que el queso se haya derretido y la pizza se dore. Agrega la albahaca ¡y listo! Tienes una deliciosa pizza italiana en tu mesa.\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear receta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"nombre\": \"Pizza\",\r\n   \"descripcion\": \"Clásica pizza italiana\",\r\n   \"imagen\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg\",\r\n   \"video\": \"\",\r\n   \"proceso\": \"Mezcla la harina en un recipiente grande y aparte disuelve la levadura en el agua. Haz un hueco en el centro de la harina, vierte el agua y empieza a mezclar del centro hacia afuera uniendo todos los ingredientes. Luego, agrega el aceite y pon la masa sobre un mesón enharinado; amasa durante 10 minutos o hasta que quede lisa y elástica. Déjala reposar una hora en el recipiente tapado con un limpión o todo un día en la nevera (tapado con papel film). Precalienta el horno a 450°f. / 232°C. Coloca una lata grande en la rejilla de abajo del horno o usa una piedra para pizza (si la tienes). Dale un golpe fuerte a la masa y ponla sobre el mesón enharinado. Extiende con la ayuda de un rodillo y usando las yemas de los dedos. Si se te pega a la mesa, agrega un poco más de harina. Cuando tengas un círculo de aproximadamente 35 cm, transfiere la masa a una tabla enharinada.Unta la superficie con la salsa pomodoro pero sin llegar a los bordes. Reparte el resto de los ingredientes, menos la albahaca. Pon la pizza sobre la lata o piedra que está en el horno y hornea durante 12 a 15 minutos o hasta que el queso se haya derretido y la pizza se dore. Agrega la albahaca ¡y listo! Tienes una deliciosa pizza italiana en tu mesa.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Obtener todas las recetas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Numero de recetas > ' + 0, function () {\r",
+							"   var data = pm.response.json()\r",
+							"   pm.expect(data.length).to.greaterThan(0)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n   \"id\": \"1\",\r\n   \"nombre\": \"Pizza\",\r\n   \"descripcion\": \"Clásica pizza italiana\",\r\n   \"imagen\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg\",\r\n   \"video\": \"\",\r\n   \"proceso\": \"Mezcla la harina en un recipiente grande y aparte disuelve la levadura en el agua. Haz un hueco en el centro de la harina, vierte el agua y empieza a mezclar del centro hacia afuera uniendo todos los ingredientes. Luego, agrega el aceite y pon la masa sobre un mesón enharinado; amasa durante 10 minutos o hasta que quede lisa y elástica. Déjala reposar una hora en el recipiente tapado con un limpión o todo un día en la nevera (tapado con papel film). Precalienta el horno a 450°f. / 232°C. Coloca una lata grande en la rejilla de abajo del horno o usa una piedra para pizza (si la tienes). Dale un golpe fuerte a la masa y ponla sobre el mesón enharinado. Extiende con la ayuda de un rodillo y usando las yemas de los dedos. Si se te pega a la mesa, agrega un poco más de harina. Cuando tengas un círculo de aproximadamente 35 cm, transfiere la masa a una tabla enharinada.Unta la superficie con la salsa pomodoro pero sin llegar a los bordes. Reparte el resto de los ingredientes, menos la albahaca. Pon la pizza sobre la lata o piedra que está en el horno y hornea durante 12 a 15 minutos o hasta que el queso se haya derretido y la pizza se dore. Agrega la albahaca ¡y listo! Tienes una deliciosa pizza italiana en tu mesa.\"\r\n}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todas las recetas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n{\r\n   \"id\": \"1\",\r\n   \"nombre\": \"Pizza\",\r\n   \"descripcion\": \"Clásica pizza italiana\",\r\n   \"imagen\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg\",\r\n   \"video\": \"\",\r\n   \"proceso\": \"Mezcla la harina en un recipiente grande y aparte disuelve la levadura en el agua. Haz un hueco en el centro de la harina, vierte el agua y empieza a mezclar del centro hacia afuera uniendo todos los ingredientes. Luego, agrega el aceite y pon la masa sobre un mesón enharinado; amasa durante 10 minutos o hasta que quede lisa y elástica. Déjala reposar una hora en el recipiente tapado con un limpión o todo un día en la nevera (tapado con papel film). Precalienta el horno a 450°f. / 232°C. Coloca una lata grande en la rejilla de abajo del horno o usa una piedra para pizza (si la tienes). Dale un golpe fuerte a la masa y ponla sobre el mesón enharinado. Extiende con la ayuda de un rodillo y usando las yemas de los dedos. Si se te pega a la mesa, agrega un poco más de harina. Cuando tengas un círculo de aproximadamente 35 cm, transfiere la masa a una tabla enharinada.Unta la superficie con la salsa pomodoro pero sin llegar a los bordes. Reparte el resto de los ingredientes, menos la albahaca. Pon la pizza sobre la lata o piedra que está en el horno y hornea durante 12 a 15 minutos o hasta que el queso se haya derretido y la pizza se dore. Agrega la albahaca ¡y listo! Tienes una deliciosa pizza italiana en tu mesa.\"\r\n}\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{recetaId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{recetaId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": \"1\",\r\n   \"nombre\": \"Pizza\",\r\n   \"descripcion\": \"Clásica pizza italiana\",\r\n   \"imagen\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg\",\r\n   \"video\": \"\",\r\n   \"proceso\": \"Mezcla la harina en un recipiente grande y aparte disuelve la levadura en el agua. Haz un hueco en el centro de la harina, vierte el agua y empieza a mezclar del centro hacia afuera uniendo todos los ingredientes. Luego, agrega el aceite y pon la masa sobre un mesón enharinado; amasa durante 10 minutos o hasta que quede lisa y elástica. Déjala reposar una hora en el recipiente tapado con un limpión o todo un día en la nevera (tapado con papel film). Precalienta el horno a 450°f. / 232°C. Coloca una lata grande en la rejilla de abajo del horno o usa una piedra para pizza (si la tienes). Dale un golpe fuerte a la masa y ponla sobre el mesón enharinado. Extiende con la ayuda de un rodillo y usando las yemas de los dedos. Si se te pega a la mesa, agrega un poco más de harina. Cuando tengas un círculo de aproximadamente 35 cm, transfiere la masa a una tabla enharinada.Unta la superficie con la salsa pomodoro pero sin llegar a los bordes. Reparte el resto de los ingredientes, menos la albahaca. Pon la pizza sobre la lata o piedra que está en el horno y hornea durante 12 a 15 minutos o hasta que el queso se haya derretido y la pizza se dore. Agrega la albahaca ¡y listo! Tienes una deliciosa pizza italiana en tu mesa.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas/{{recetaId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"{{recetaId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas/09cd37cc-0249-4c17-a4cc-91b65850eb95",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"09cd37cc-0249-4c17-a4cc-91b65850eb95"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta que no existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"No se puede obtener datos, la receta no existe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas/09cd37cc-0249-4c17-a4cc-91b65850eb95",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"09cd37cc-0249-4c17-a4cc-91b65850eb95"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Actualizar una receta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Pizza1\",\r\n    \"descripcion\": \"Clásica pizza italiana\",\r\n    \"imagen\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg\",\r\n    \"video\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.mp4\",\r\n    \"proceso\": \"Mezcla la harina en un recipiente grande y aparte disuelve la levadura en el agua. Haz un hueco en el centro de la harina, vierte el agua y empieza a mezclar del centro hacia afuera uniendo todos los ingredientes. Luego, agrega el aceite y pon la masa sobre un mesón enharinado; amasa durante 10 minutos o hasta que quede lisa y elástica. Déjala reposar una hora en el recipiente tapado con un limpión o todo un día en la nevera (tapado con papel film). Precalienta el horno a 450°f. / 232°C. Coloca una lata grande en la rejilla de abajo del horno o usa una piedra para pizza (si la tienes). Dale un golpe fuerte a la masa y ponla sobre el mesón enharinado. Extiende con la ayuda de un rodillo y usando las yemas de los dedos. Si se te pega a la mesa, agrega un poco más de harina. Cuando tengas un círculo de aproximadamente 35 cm, transfiere la masa a una tabla enharinada.Unta la superficie con la salsa pomodoro pero sin llegar a los bordes. Reparte el resto de los ingredientes, menos la albahaca. Pon la pizza sobre la lata o piedra que está en el horno y hornea durante 12 a 15 minutos o hasta que el queso se haya derretido y la pizza se dore. Agrega la albahaca ¡y listo! Tienes una deliciosa pizza italiana en tu mesa.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{recetaId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{recetaId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar una receta",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n   \"nombre\": \"Pizza\",\r\n   \"descripcion\": \"Clásica pizza italiana nueva versión\",\r\n   \"imagen\": \"https://www.olivetto.com.co/wp-content/uploads/Olivetto-Experimenta-PizzaItalianaClasica.jpg\",\r\n   \"video\": \"\",\r\n   \"proceso\": \"Mezcla la harina en un recipiente grande y aparte disuelve la levadura en el agua. Haz un hueco en el centro de la harina, vierte el agua y empieza a mezclar del centro hacia afuera uniendo todos los ingredientes. Luego, agrega el aceite y pon la masa sobre un mesón enharinado; amasa durante 10 minutos o hasta que quede lisa y elástica. Déjala reposar una hora en el recipiente tapado con un limpión o todo un día en la nevera (tapado con papel film). Precalienta el horno a 450°f. / 232°C. Coloca una lata grande en la rejilla de abajo del horno o usa una piedra para pizza (si la tienes). Dale un golpe fuerte a la masa y ponla sobre el mesón enharinado. Extiende con la ayuda de un rodillo y usando las yemas de los dedos. Si se te pega a la mesa, agrega un poco más de harina. Cuando tengas un círculo de aproximadamente 35 cm, transfiere la masa a una tabla enharinada.Unta la superficie con la salsa pomodoro pero sin llegar a los bordes. Reparte el resto de los ingredientes, menos la albahaca. Pon la pizza sobre la lata o piedra que está en el horno y hornea durante 12 a 15 minutos o hasta que el queso se haya derretido y la pizza se dore. Agrega la albahaca ¡y listo! Tienes una deliciosa pizza italiana en tu mesa.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}recetas/{{recetaId}}",
+							"host": [
+								"{{baseUrl}}recetas"
+							],
+							"path": [
+								"{{recetaId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Actualizar una receta que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas/09cd37cc-0249-4c17-a4cc-91b65850eb95",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"09cd37cc-0249-4c17-a4cc-91b65850eb95"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar una receta que no existe",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"No se puede actualizar la receta, no existe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas/09cd37cc-0249-4c17-a4cc-91b65850eb95",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"09cd37cc-0249-4c17-a4cc-91b65850eb95"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar una receta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"   pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{recetaId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{recetaId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una receta",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas/{{recetaId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"{{recetaId}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar una receta que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJpYXQiOjE2NjM1NDk3ODksImV4cCI6MTY2MzU1Njk4OX0.q8p42XHt1M2EsF6_ewAsCCb6QU-SnDVGC5P5uWSYw9Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas/09cd37cc-0249-4c17-a4cc-91b65850eb95",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"09cd37cc-0249-4c17-a4cc-91b65850eb95"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una receta que no existe",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"No se puede eliminar la receta, no existe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas/09cd37cc-0249-4c17-a4cc-91b65850eb95",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"09cd37cc-0249-4c17-a4cc-91b65850eb95"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://4a4a-181-139-212-183.ngrok.io/api/v1",
+			"type": "string"
+		}
+	]
+}

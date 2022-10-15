@@ -1,0 +1,843 @@
+{
+	"info": {
+		"_postman_id": "84b66c96-bc0f-4336-a610-d4f74643d930",
+		"name": "Estrella Michelin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23039942"
+	},
+	"item": [
+		{
+			"name": "Obtener autorizacion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"token\", data.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"username\": \"admin\",\n   \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Estrella Michelin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"estrella_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaDeObtencion\": \"26/09/20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin"
+					]
+				},
+				"description": "Crea una nueva estrella michelín. Regresa un código de éxito tras la creación."
+			},
+			"response": [
+				{
+					"name": "Add Estrella Michelin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fechaDeObtencion\": \"26/09/20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estrellas-michelin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estrellas-michelin"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": \"11\",\n    \"fechaDeObtencion\": \"26/09/20\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Estrella Michelin2 (test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"estrella_id2\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaDeObtencion\": \"26/09/20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin"
+					]
+				},
+				"description": "Crea una nueva estrella michelín. Regresa un código de éxito tras la creación."
+			},
+			"response": [
+				{
+					"name": "Add Estrella Michelin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fechaDeObtencion\": \"26/09/20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estrellas-michelin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estrellas-michelin"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": \"11\",\n    \"fechaDeObtencion\": \"26/09/20\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Estrellas Michelin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of estrellas michelin > ' + 0, function () {",
+							"   var data = pm.response.json()",
+							"   pm.expect(data.length).to.greaterThan(0)",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin"
+					]
+				},
+				"description": "Recupera toda la colección de estrellas michelín en la app. Retorna un código de éxito al recuperarla."
+			},
+			"response": [
+				{
+					"name": "Get All Estrellas Michelin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estrellas-michelin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estrellas-michelin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"11\",\n        \"fechaDeObtencion\": \"26/09/20\"\n    },\n    {\n        \"id\": \"12\",\n        \"fechaDeObtencion\": \"20/06/21\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get One Estrella Michelin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin/{{estrella_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin",
+						"{{estrella_id}}"
+					]
+				},
+				"description": "Recupera una estrella michelín en específico. Retorna un código de éxito y la representación en JSON de la estrella."
+			},
+			"response": [
+				{
+					"name": "Get One Estrella Michelin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estrellas-michelin/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estrellas-michelin",
+								"11"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": \"11\",\n    \"fechaDeObtencion\": \"26/09/20\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Invalid Estrella Michelin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"La estrella michelin con el id dado no fue encontrada\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				},
+				"description": "Recupera una estrella michelín no válida. Retorna un código de error al no encontrar el recurso."
+			},
+			"response": [
+				{
+					"name": "Get Invalid Estrella Michelin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/estrellas-michelin/0000-000-00",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"estrellas-michelin",
+								"0000-000-00"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La estrella michelin con el id dado no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Una Estrella Michelin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaDeObtencion\": \"27/09/20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin/{{estrella_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin",
+						"{{estrella_id}}"
+					]
+				},
+				"description": "Actualiza la información de una estrella michelín en específico. Retorna un código de éxito si no hay error."
+			},
+			"response": [
+				{
+					"name": "Actualizar Una Estrella Michelin",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"11\",\n    \"fechaDeObtencion\": \"27/09/20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estrellas-michelin/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estrellas-michelin",
+								"11"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": \"11\",\n    \"fechaDeObtencion\": \"27/09/20\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Una Estrella Michelin Invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"La estrella michelin con el id dado no fue encontrada\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaDeObtencion\": \"27/09/20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				},
+				"description": "Intenta actualizar una estrella estrella michelín inválida. Retorna un código de error al no encontrar el recurso."
+			},
+			"response": [
+				{
+					"name": "Actualizar Una Estrella Michelin Invalida",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"0000-000-00\",\n    \"fechaDeObtencion\": \"27/09/20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/estrellas-michelin/0000-000-00",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"estrellas-michelin",
+								"0000-000-00"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La estrella michelin con el id dado no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Estrella Michelin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin/{{estrella_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin",
+						"{{estrella_id}}"
+					]
+				},
+				"description": "Borra una estrella michelín de la colección. No genera mensaje de retorno."
+			},
+			"response": [
+				{
+					"name": "Delete Estrella Michelin",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/estrellas-michelin/{{estrella-michelin-id1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"estrellas-michelin",
+								"{{estrella-michelin-id1}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete Estrella Michelin Invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"La estrella michelin con el id dado no fue encontrada\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/estrellas-michelin/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"estrellas-michelin",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				},
+				"description": "Intenta borrar una estrella michelín que no existe. Retorna un mensaje de error al no encontrar el recurso."
+			},
+			"response": [
+				{
+					"name": "Delete Estrella Michelin Invalida",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/estrellas-michelin/0000-000-00",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"estrellas-michelin",
+								"0000-000-00"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"La estrella michelin con el id dado no fue encontrada.\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "estrella-michelin-id1",
+			"value": "11"
+		}
+	]
+}

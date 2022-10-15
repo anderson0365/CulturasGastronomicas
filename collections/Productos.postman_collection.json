@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "846e33de-16cb-4d55-825a-21c01542fd9d",
+		"name": "Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Agregar un Producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"nombre\": \"Papa\",\r\n      \"descripcion\": \"Tuberculo indispensable en comida paisa.\",\r\n      \"historia\": \"Cultivadad por nuestros ancestros.\",\r\n      \"categoria\": \"tuberculo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"nombre\": \"Papa\",\r\n      \"descripcion\": \"Tuberculo indispensable en comida paisa.\",\r\n      \"historia\": \"Cultivadad por nuestros ancestros.\",\r\n      \"categoria\": \"tuberculo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n      \"id\": 1,\r\n      \"nombre\": \"Papa\",\r\n      \"descripcion\": \"Tuberculo indispensable en comida paisa.\",\r\n      \"historia\": \"Cultivada por nuestros ancestros.\",\r\n      \"categoria\": \"tuberculo\"\r\n    }"
+				}
+			]
+		},
+		{
+			"name": "Obtener todos los Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todos los Productos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos?pagina={{pagina}}&ordenarPor={{campoOrdernarPor}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "{{pagina}}"
+								},
+								{
+									"key": "ordenarPor",
+									"value": "{{campoOrdernarPor}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n  \"datos\":[\r\n    {\r\n      \"id\": 1,\r\n      \"nombre\": \"Papa\",\r\n      \"descripcion\": \"Tuberculo indispensable en comida paisa.\",\r\n      \"historia\": \"Cultivada por nuestros ancestros.\",\r\n      \"categoria\": \"tuberculo\"\r\n    },\r\n    {\r\n      \"id\": 2,\r\n      \"nombre\": \"Maiz\",\r\n      \"descripcion\": \"Cereal con mucha fibra y rico en Vitamina del complejo B.\",\r\n      \"historia\": \"Cereal original de Mexico.\",\r\n      \"categoria\": \"Cereal\"\r\n    }\r\n],\r\n\"paginacion\": {\r\n    \"paginaActual\": 1,\r\n    \"ultimaPagina\": 1,\r\n    \"cuentaEnPaginaActual\": 1,\r\n    \"maxCuentaEnPagina\": 15,\r\n    \"totalRegistros\": 1\r\n  }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un Producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un Producto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Maiz\",\r\n    \"descripcion\": \"Cereal con mucha fibra y rico en Vitamina del complejo B.\",\r\n    \"historia\": \"Cereal original de Mexico.\",\r\n    \"categoria\": \"Cereal\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un Producto invalido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un Producto invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"El Producto con el Id no ha sido encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un Producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Maiz\",\r\n    \"descripcion\": \"Cereal con mucha fibra y rico en Vitamina del complejo B.\",\r\n    \"historia\": \"Cereal original de Mexico.\",\r\n    \"categoria\": \"Cereal(Update)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar un Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Maiz\",\r\n    \"descripcion\": \"Cereal con mucha fibra y rico en Vitamina del complejo B.\",\r\n    \"historia\": \"Cereal original de Mexico.\",\r\n    \"categoria\": \"Cereal(Update)\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un Producto invalido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Maiz\",\r\n    \"descripcion\": \"Cereal con mucha fibra y rico en Vitamina del complejo B.\",\r\n    \"historia\": \"Cereal original de Mexico.\",\r\n    \"categoria\": \"Cereal(Update)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar un Producto invalido",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El Producto con el Id no ha sido encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar Producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Eliminar un Producto invalido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un Producto invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n   \"statusCode\": 404,\r\n   \"message\": \"El Producto con el Id no ha sido encontrado\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

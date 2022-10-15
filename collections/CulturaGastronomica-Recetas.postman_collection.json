@@ -1,0 +1,2308 @@
+{
+	"info": {
+		"_postman_id": "707785df-ae73-4f6a-bf8f-71fef32a4c47",
+		"name": "CulturaGastronomica-Recetas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20335469"
+	},
+	"item": [
+		{
+			"name": "Agregar CulturaGastronomica (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idCulturaGastronomica\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-njwQJuak4W44oGHJK/zp4yiPec4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 23:57:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"id\": \"8eab1d0c-8402-4ca5-ae30-dd091b7eba35\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Receta (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idReceta\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Arroz con pollo\",\n    \"descripcion\": \"Rico, y nutritivo\",\n    \"imagen\": \"https://images.aws.nestle.recipes/resized/e4710bfdb6b8546a182a62ff7ef7a5c8_ARROZ____1200_600.png\",\n    \"video\": \"https://www.youtube.com/watch?v=jdKn7AGBoBM\",\n    \"proceso\": \"Tome el arroz blanco y metale pollo desmechado.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Pais (Precondicion de Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Colombia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-pd0c0J/Y63bhp3tIS0IItLkHhjI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:39:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Colombia\",\n    \"id\": \"9cb38850-5b1e-4991-a29c-c5f47386ab23\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Receta 2 (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idReceta_2\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Arroz chino\",\n    \"descripcion\": \"Rico, nutritivo, y sabroso\",\n    \"imagen\": \"https://www.comedera.com/wp-content/uploads/2014/01/arroz-chino-casero.jpg\",\n    \"video\": \"https://www.youtube.com/watch?v=zW4dnnE7KBk\",\n    \"proceso\": \"Tome el arroz blanco y metale lo que encuentre mal parqueado.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Pais (Precondicion de Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Colombia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-pd0c0J/Y63bhp3tIS0IItLkHhjI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:39:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Colombia\",\n    \"id\": \"9cb38850-5b1e-4991-a29c-c5f47386ab23\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Receta a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"{{idReceta}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Receta a CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"{{idReceta}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "546"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"222-J2ihTUp8SQakrXQgrVtYPDdpfuk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:40:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1e2f3891-bf6a-4f23-ae8e-e178adccb567\",\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"recetas\": [\n        {\n            \"id\": \"32eba0c0-4220-45db-9cf2-256a269b13cc\",\n            \"nombre\": \"Arroz con pollo\",\n            \"descripcion\": \"Rico, y nutritivo\",\n            \"imagen\": \"https://images.aws.nestle.recipes/resized/e4710bfdb6b8546a182a62ff7ef7a5c8_ARROZ____1200_600.png\",\n            \"video\": \"https://www.youtube.com/watch?v=jdKn7AGBoBM\",\n            \"proceso\": \"Tome el arroz blanco y metale pollo desmechado.\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Receta inválida a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Receta dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Receta inválida a CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-0GKQeJdqLM27dphkPt/ieiiC70w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:41:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"Receta dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Receta a CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{idReceta}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas",
+						"{{idReceta}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Receta a CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{idReceta}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas",
+								"{{idReceta}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:41:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener Recetas de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener Recetas de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "330"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14a-mtLEEpTbvmIONdu1qhnEqgpQuRY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:42:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"32eba0c0-4220-45db-9cf2-256a269b13cc\",\n        \"nombre\": \"Arroz con pollo\",\n        \"descripcion\": \"Rico, y nutritivo\",\n        \"imagen\": \"https://images.aws.nestle.recipes/resized/e4710bfdb6b8546a182a62ff7ef7a5c8_ARROZ____1200_600.png\",\n        \"video\": \"https://www.youtube.com/watch?v=jdKn7AGBoBM\",\n        \"proceso\": \"Tome el arroz blanco y metale pollo desmechado.\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener Recetas de CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener Recetas de CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:42:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una Receta de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"{{idReceta}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una Receta de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"{{idReceta}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "328"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"148-sXxlhHrqi5Xp7QXBbFI4IIbkcOc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:42:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"32eba0c0-4220-45db-9cf2-256a269b13cc\",\n    \"nombre\": \"Arroz con pollo\",\n    \"descripcion\": \"Rico, y nutritivo\",\n    \"imagen\": \"https://images.aws.nestle.recipes/resized/e4710bfdb6b8546a182a62ff7ef7a5c8_ARROZ____1200_600.png\",\n    \"video\": \"https://www.youtube.com/watch?v=jdKn7AGBoBM\",\n    \"proceso\": \"Tome el arroz blanco y metale pollo desmechado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una Receta no asociada a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Receta dada no se encuentra asociada a CulturaGastronomica dada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"{{idReceta_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una Receta no asociada a CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"{{idReceta_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-+JsoVlN6T81egvvnVLJBEO3z51s\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:42:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 412,\n    \"mensaje\": \"Receta dada no se encuentra asociada a CulturaGastronomica dada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una Receta inválida de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Receta dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una Receta inválida de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-0GKQeJdqLM27dphkPt/ieiiC70w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:43:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"Receta dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una Receta de CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{idReceta}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas",
+						"{{idReceta}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una Receta de CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{idReceta}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas",
+								"{{idReceta}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:43:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Recetas en CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{{idReceta_2}}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Recetas en CulturaGastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"{{idReceta_2}}\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "570"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"23a-qruacobgRaWGWIMY31dA2bSyGas\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:43:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1e2f3891-bf6a-4f23-ae8e-e178adccb567\",\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"recetas\": [\n        {\n            \"id\": \"f2dcc232-ef8e-477e-9141-75881fe4c9cd\",\n            \"nombre\": \"Arroz chino\",\n            \"descripcion\": \"Rico, nutritivo, y sabroso\",\n            \"imagen\": \"https://www.comedera.com/wp-content/uploads/2014/01/arroz-chino-casero.jpg\",\n            \"video\": \"https://www.youtube.com/watch?v=zW4dnnE7KBk\",\n            \"proceso\": \"Tome el arroz blanco y metale lo que encuentre mal parqueado.\",\n            \"culturaGastronomica\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Recetas inválidas en CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"La receta con el solicitado id no existe\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"00000000-0000-0000-0000-000000000000\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Recetas inválidas en CulturaGastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"00000000-0000-0000-0000-000000000000\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "72"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"48-8yd7Kxy830WoJ3EHyY67Lg+rGZk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:43:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"La receta con el solicitado id no existe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Recetas en CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{{idReceta}}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Recetas en CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"{{idReceta}}\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:43:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar una Receta de una CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"{{idReceta_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una Receta de una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"{{idReceta_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:43:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar una Receta inválida de una CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Receta dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una Receta inválida de una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-0GKQeJdqLM27dphkPt/ieiiC70w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:44:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"Receta dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar una Receta de una CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{idReceta_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas",
+						"{{idReceta_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una Receta de una CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{idReceta_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas",
+								"{{idReceta_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:44:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar una Receta no asociada a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Receta dada no se encuentra asociada a CulturaGastronomica dada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"recetas",
+						"{{idReceta_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una Receta no asociada a CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/recetas/{{idReceta_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"recetas",
+								"{{idReceta_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-+JsoVlN6T81egvvnVLJBEO3z51s\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Sep 2022 00:44:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 412,\n    \"mensaje\": \"Receta dada no se encuentra asociada a CulturaGastronomica dada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un CulturaGastronomica  (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar Receta (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{idReceta}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{idReceta}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar Receta 2 (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{idReceta_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{idReceta_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{user_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "idCulturaGastronomica",
+			"value": ""
+		},
+		{
+			"key": "idReceta",
+			"value": ""
+		},
+		{
+			"key": "idReceta_2",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,2308 @@
+{
+	"info": {
+		"_postman_id": "1eca01fd-29a1-48dd-992e-fd48d399cf43",
+		"name": "CulturaGastronomica-Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20335469"
+	},
+	"item": [
+		{
+			"name": "Agregar CulturaGastronomica (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idCulturaGastronomica\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-njwQJuak4W44oGHJK/zp4yiPec4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 23:57:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"id\": \"8eab1d0c-8402-4ca5-ae30-dd091b7eba35\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Producto (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idProducto\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"papa\",\n    \"descripcion\": \"Tuberculo rico en carbohidratos\",\n    \"historia\": \"Un producto comido y cultivado por nuestros antepasados.\",\n    \"categoria\": \"tuberculo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Pais (Precondicion de Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Colombia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-pd0c0J/Y63bhp3tIS0IItLkHhjI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:39:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Colombia\",\n    \"id\": \"9cb38850-5b1e-4991-a29c-c5f47386ab23\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Producto 2 (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idProducto_2\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"cebolla\",\n    \"descripcion\": \"Para meterle poder al aliento\",\n    \"historia\": \"Un producto comido y cultivado por nuestros antepasados.\",\n    \"categoria\": \"vegetal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Pais (Precondicion de Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Colombia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-pd0c0J/Y63bhp3tIS0IItLkHhjI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:39:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Colombia\",\n    \"id\": \"9cb38850-5b1e-4991-a29c-c5f47386ab23\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Producto a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Producto a CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "423"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a7-uqDQ38EqEODnTmQVOkUz0TWMdJE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:28:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e3378e2b-c119-4930-b132-24918072a59a\",\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"productos\": [\n        {\n            \"id\": \"6991a630-fb63-451d-af24-5111d917e5d2\",\n            \"nombre\": \"papa\",\n            \"descripcion\": \"Tuberculo rico en carbohidratos\",\n            \"historia\": \"Un producto comido y cultivado por nuestros antepasados.\",\n            \"categoria\": \"tuberculo\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Producto inválida a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"producto dado no fue encontrado.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Producto inválida a CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "64"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"40-wqrO9nt7RhKnmKSvoBZM69UWcG8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"producto dado no fue encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Producto a CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Producto a CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener Productos de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener Productos de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-QqSbCmAP7NQ6g2ahcAoZkLnUIag\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"6991a630-fb63-451d-af24-5111d917e5d2\",\n        \"nombre\": \"papa\",\n        \"descripcion\": \"Tuberculo rico en carbohidratos\",\n        \"historia\": \"Un producto comido y cultivado por nuestros antepasados.\",\n        \"categoria\": \"tuberculo\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener Productos de CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener Productos de CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un Producto de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un Producto de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "203"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cb-gOXT14rtLAQ0CllKGbz5I+c8X54\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6991a630-fb63-451d-af24-5111d917e5d2\",\n    \"nombre\": \"papa\",\n    \"descripcion\": \"Tuberculo rico en carbohidratos\",\n    \"historia\": \"Un producto comido y cultivado por nuestros antepasados.\",\n    \"categoria\": \"tuberculo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un Producto no asociada a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Producto dado no esta asociado a CulturaGastronomica dada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"{{idProducto_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un Producto no asociada a CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"{{idProducto_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a-WJZ5G94iN3Ps78zmW48zTdGeViY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"Producto dado no esta asociado a CulturaGastronomica dada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un Producto inválida de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"producto dado no fue encontrado.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un Producto inválida de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "64"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"40-wqrO9nt7RhKnmKSvoBZM69UWcG8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"producto dado no fue encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un Producto de CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un Producto de CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Productos en CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{{idProducto_2}}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Productos en CulturaGastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"{{idProducto_2}}\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "422"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a6-rHmANCe3wDUn4kzJvWXT4i6BRNs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"e3378e2b-c119-4930-b132-24918072a59a\",\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"productos\": [\n        {\n            \"id\": \"90f9f754-c9d3-43fc-9097-a2913cf70649\",\n            \"nombre\": \"cebolla\",\n            \"descripcion\": \"Para meterle poder al aliento\",\n            \"historia\": \"Un producto comido y cultivado por nuestros antepasados.\",\n            \"categoria\": \"vegetal\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Productos inválidos en CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"El Producto con el Id no ha sido encontrado\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"00000000-0000-0000-0000-000000000000\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Productos inválidos en CulturaGastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"00000000-0000-0000-0000-000000000000\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-/pceSGbMQElkwhmqFr6GysU/S9c\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:29:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"El Producto con el Id no ha sido encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Productos en CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{{idProducto}}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Productos en CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"{{idProducto}}\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:30:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un Producto de una CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"{{idProducto_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un Producto de una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"{{idProducto_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:30:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar un Producto inválida de una CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"producto dado no fue encontrado.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un Producto inválida de una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "64"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"40-wqrO9nt7RhKnmKSvoBZM69UWcG8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:30:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"producto dado no fue encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un Producto de una CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos/{{idProducto_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"productos",
+						"{{idProducto_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un Producto de una CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/productos/{{idProducto_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"productos",
+								"{{idProducto_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:30:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un Producto no asociada a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Producto dado no esta asociado a CulturaGastronomica dada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un Producto no asociada a CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/productos/{{idProducto}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"productos",
+								"{{idProducto}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a-FKp12D49jw+0mxMWxd5kj+fLaUk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 03:39:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 412,\n    \"mensaje\": \"Producto dado no esta asociado a CulturaGastronomica dada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un CulturaGastronomica  (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar Producto (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{idProducto}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{idProducto}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar Producto 2 (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{idProducto_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{idProducto_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{user_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "idCulturaGastronomica",
+			"value": ""
+		},
+		{
+			"key": "idProducto",
+			"value": ""
+		},
+		{
+			"key": "idProducto_2",
+			"value": ""
+		}
+	]
+}

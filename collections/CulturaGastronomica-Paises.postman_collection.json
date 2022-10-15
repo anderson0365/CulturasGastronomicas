@@ -1,0 +1,2309 @@
+{
+	"info": {
+		"_postman_id": "0cba6b36-503d-4e5e-8a96-eec2230398de",
+		"name": "CulturaGastronomica-Paises",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20335469"
+	},
+	"item": [
+		{
+			"name": "Agregar CulturaGastronomica (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idCulturaGastronomica\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-njwQJuak4W44oGHJK/zp4yiPec4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 23:57:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"id\": \"8eab1d0c-8402-4ca5-ae30-dd091b7eba35\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Pais (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idPais\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Colombia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Pais (Precondicion de Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Colombia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-pd0c0J/Y63bhp3tIS0IItLkHhjI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:39:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Colombia\",\n    \"id\": \"9cb38850-5b1e-4991-a29c-c5f47386ab23\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Pais 2 (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.collectionVariables.set(\"idPais_2\", data.id);",
+							"",
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Venezuela\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Pais 2 (Precondicion de Test)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Venezuela\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-i1Xhu+3BXS9Hc8T4mSLTM645YeU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:40:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Venezuela\",\n    \"id\": \"26e076ac-2f76-4af5-aeae-9069f03ea070\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar País a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"{{idPais}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar País a CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"{{idPais}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "282"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11a-sp/Ek1kvfMFTuMrkt6lvqWXvTpY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:41:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"9f6120bb-2714-4b84-b465-bcb19c32da0f\",\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"paises\": [\n        {\n            \"id\": \"9cb38850-5b1e-4991-a29c-c5f47386ab23\",\n            \"nombre\": \"Colombia\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar País inválida a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Pais dado no fue encontrado.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar País inválida a CulturaGastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-FR/sO11VJoLYViFytX3kSHBRFrM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:47:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"Pais dado no fue encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar País a CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises/{{idPais}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{idPais}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar País a CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises/{{idPais}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"paises",
+								"{{idPais}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 03:48:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener Paises de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener Paises de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-vaHX0NDj/WmjcNZCqoZZs0Dgplc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 21:37:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"aa6fd374-6e5b-4cc6-a3ac-d9cb3fb10a8a\",\n        \"nombre\": \"Colombia\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener Paises de CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener Paises de CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"paises"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 21:40:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un País de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"{{idPais}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un País de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"{{idPais}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"41-niXgLPO2R7eystzX1+SLOiJ48Ok\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:18:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"72b72250-d7d2-47f3-8269-3002fec81862\",\n    \"nombre\": \"Colombia\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un País no asociada a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Pais dado no se encuentra asociado a CulturaGastronomica dada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"{{idPais_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un País no asociada a CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"{{idPais_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5e-jnRmXhACd/hkzYWNWyhIoJflyK0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:19:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 412,\n    \"mensaje\": \"Pais dado no se encuentra asociado a CulturaGastronomica dada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un País inválido de CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Pais dado no fue encontrado.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un País inválido de CulturaGastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-FR/sO11VJoLYViFytX3kSHBRFrM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:22:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"Pais dado no fue encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un País de CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises/{{idPais}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{idPais}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un País de CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises/{{idPais}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"paises",
+								"{{idPais}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:23:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Paises en CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 201\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"{{idPais_2}}\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Paises en CulturaGastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"{{idPais_2}}\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "283"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11b-1WMFwITfLFAuc9v5/7PGbnv47NM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:25:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"d08ae534-f0b9-4fa8-9f6c-77fab83f718e\",\n    \"nombre\": \"Paisa\",\n    \"descripcion\": \"Verde verde siempre verde.\",\n    \"img\": \"https://i.picsum.photos/id/973/800/400.jpg?hmac=VJf2LrB20LzErZXZN0RqzppwvSujTkpkau54vk2gZE4\",\n    \"paises\": [\n        {\n            \"id\": \"afdcf137-22fa-4a1f-8548-601e727b6181\",\n            \"nombre\": \"Venezuela\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Paises inválidos en CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"El pais no fue encontrado\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"00000000-0000-0000-0000-000000000000\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Paises inválidos en CulturaGastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"00000000-0000-0000-0000-000000000000\"\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-XG3cZPptiLmOcWEz/oHCEMKSdj8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:29:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"El pais no fue encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar Paises en CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar Paises en CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "",
+								"variables": ""
+							},
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"paises"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:30:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un País de una CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"{{idPais_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un País de una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"{{idPais_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:31:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar un País inválida de una CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Pais dado no fue encontrado.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un País inválida de una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-FR/sO11VJoLYViFytX3kSHBRFrM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:35:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"Pais dado no fue encontrado.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un País de una CulturaGastronomica inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"CulturaGastronomica dada no fue encontrada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises/{{idPais_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{idPais_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un País de una CulturaGastronomica inválida",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/00000000-0000-0000-0000-000000000000/paises/{{idPais_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"paises",
+								"{{idPais_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4b-gVVizWSxTf0aLOcPVLax6TofHdM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:36:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 404,\n    \"mensaje\": \"CulturaGastronomica dada no fue encontrada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un País no asociada a CulturaGastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Obtener el mensaje de error esperado\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.mensaje).to.eql(\"Pais dado no se encuentra asociado a CulturaGastronomica dada.\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}",
+						"paises",
+						"{{idPais}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un País no asociada a CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}/paises/{{idPais}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}",
+								"paises",
+								"{{idPais}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5e-jnRmXhACd/hkzYWNWyhIoJflyK0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:37:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"codigoError\": 412,\n    \"mensaje\": \"Pais dado no se encuentra asociado a CulturaGastronomica dada.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar una CulturaGastronomica  (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturasGastronomicas",
+						"{{idCulturaGastronomica}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar Pais  (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/paises/{{idPais}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises",
+						"{{idPais}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar Pais 2 (Precondicion de Test)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Código de estado es 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/paises/{{idPais_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises",
+						"{{idPais_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar una CulturaGastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturasGastronomicas/{{idCulturaGastronomica}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturasGastronomicas",
+								"{{idCulturaGastronomica}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{user_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "idCulturaGastronomica",
+			"value": ""
+		},
+		{
+			"key": "idPais",
+			"value": ""
+		},
+		{
+			"key": "idPais_2",
+			"value": ""
+		}
+	]
+}
