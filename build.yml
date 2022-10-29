@@ -18,6 +18,8 @@ jobs:
           node-version: 16.17.0
       - name: Instalación de librerías y dependencias
         run: npm ci
+      - name: Run tests
+        run: npm run test:cov
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
