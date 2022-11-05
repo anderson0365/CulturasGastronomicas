@@ -68,6 +68,13 @@ describe('CiudadService', () => {
     expect(ciudad.nombre).toEqual(storedCiudad.nombre);
   });
 
+  it('Obtener una debería retornar una ciudad por nombre', async () => {
+    const storedCiudad: CiudadEntity = ciudadesList[0];
+    const ciudad: CiudadEntity = await service.findOneByName(storedCiudad.nombre);
+    expect(ciudad).not.toBeNull();
+    expect(ciudad.nombre).toEqual(storedCiudad.nombre);
+  });
+
   it('actualizar debería modificar una ciudad', async () => {
     const ciudad: CiudadEntity = ciudadesList[0];
     ciudad.nombre = 'Nuevo nombre';

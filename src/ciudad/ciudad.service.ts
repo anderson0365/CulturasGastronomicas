@@ -45,6 +45,13 @@ export class CiudadService {
         return ciudad;
     }
 
+    async findOneByName(nombre: string): Promise<CiudadEntity> {
+        const ciudad: CiudadEntity = await this.ciudadRepository.findOne({where:{nombre}});
+        if (!ciudad)
+          throw new ExcepcionLogicaNegocio("La ciudad con el solicitado nombre no existe", ErrorNegocio.NO_ENCONTRADO);
+    
+        return ciudad;
+    }
 
     async update(id: string, ciudad: CiudadEntity): Promise<CiudadEntity> {
         const persistedCiudad: CiudadEntity = await this.ciudadRepository.findOne({where:{id}});
