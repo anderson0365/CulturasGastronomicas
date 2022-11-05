@@ -78,4 +78,61 @@ export class CiudadService {
     }
 
 
+    async create2(ciudad: CiudadEntity): Promise<CiudadEntity> {
+        return await this.ciudadRepository.save(ciudad);
+    }
+
+    async findAll2(): Promise<CiudadEntity[]> {
+        const cached: CiudadEntity[] = await this.cacheManager.get<CiudadEntity[]>(this.cacheKey);
+      
+        if(!cached){
+            const ciudades: CiudadEntity[] = await this.ciudadRepository.find();
+            await this.cacheManager.set(this.cacheKey, ciudades);
+            return ciudades;
+        }
+ 
+        return cached;
+ 
+    }
+
+    async findOne2(id: string): Promise<CiudadEntity> {
+        const ciudad: CiudadEntity = await this.ciudadRepository.findOne({where:{id}});
+        if (!ciudad)
+          throw new ExcepcionLogicaNegocio("La ciudad con el solicitado id no existe", ErrorNegocio.NO_ENCONTRADO);
+    
+        return ciudad;
+    }
+
+    async findOneByName3(nombre: string): Promise<CiudadEntity> {
+        const ciudad: CiudadEntity = await this.ciudadRepository.findOne({where:{nombre}});
+        if (!ciudad)
+          throw new ExcepcionLogicaNegocio("La ciudad con el solicitado nombre no existe", ErrorNegocio.NO_ENCONTRADO);
+    
+        return ciudad;
+    }
+
+    async findOneByName4(nombre: string): Promise<CiudadEntity> {
+        const ciudad: CiudadEntity = await this.ciudadRepository.findOne({where:{nombre}});
+        if (!ciudad)
+          throw new ExcepcionLogicaNegocio("La ciudad con el solicitado nombre no existe", ErrorNegocio.NO_ENCONTRADO);
+    
+        return ciudad;
+    }
+
+    async update2(id: string, ciudad: CiudadEntity): Promise<CiudadEntity> {
+        const persistedCiudad: CiudadEntity = await this.ciudadRepository.findOne({where:{id}});
+        if (!persistedCiudad)
+          throw new ExcepcionLogicaNegocio("La ciudad con el id solicitado no existe", ErrorNegocio.NO_ENCONTRADO);
+        
+        return await this.ciudadRepository.save({...persistedCiudad, ...ciudad});
+    }
+
+    async delete2(id: string) {
+        const ciudad: CiudadEntity = await this.ciudadRepository.findOne({where:{id}});
+        if (!ciudad)
+          throw new ExcepcionLogicaNegocio("La ciudad con el id solicitado no existe", ErrorNegocio.NO_ENCONTRADO);
+      
+        await this.ciudadRepository.remove(ciudad);
+    }
+
 }
